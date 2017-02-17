@@ -1,0 +1,19 @@
+{
+  "name": "vue-switches-vms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marsovski/vue-switches-vms.git"
+  },
+  "author": "Milos Markovic <milos.markovic@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marsovski/vue-switches-vms/issues"
+  },
+  "homepage": "https://github.com/Marsovski/vue-switches-vms#readme"
+}
