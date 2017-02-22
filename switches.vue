@@ -1,13 +1,6 @@
 <template>
     <label :class="classObject">
-        <span class="vue-switcher__label">
-            <span v-if="label" v-text="label"></span>
-            <span v-if="!label && enabled" v-text="textEnabled"></span>
-            <span v-if="!label && !enabled" v-text="textDisabled"></span>
-        </span>
-
         <input type="checkbox" :disabled="disabled" v-model="enabled">
-
         <div></div>
     </label>
 </template>
@@ -22,8 +15,6 @@ export default {
 		},
 		selected: false,
 		disabled: false,
-
-		label: '',
 
 		textEnabled: {
 			default: ''
@@ -103,44 +94,6 @@ export default {
     );
 
     /**
-     * Bulma
-     */
-    $color-bulma-default: #f5f5f5;
-    $color-bulma-primary: #00d1b2;
-    $color-bulma-blue: #3273dc;
-    $color-bulma-red: #ff3860;
-    $color-bulma-yellow: #ffdd57;
-    $color-bulma-green: #22c65b;
-
-    $theme-bulma-colors: (
-        default : $color-bulma-default,
-        primary : $color-bulma-primary,
-        blue    : $color-bulma-blue,
-        red     : $color-bulma-red,
-        yellow  : $color-bulma-yellow,
-        green   : $color-bulma-green
-    );
-
-    /**
-     * Bootstrap
-     */
-    $color-bootstrap-default: #fff;
-    $color-bootstrap-primary: #337ab7;
-    $color-bootstrap-success: #5cb85c;
-    $color-bootstrap-info: #5bc0de;
-    $color-bootstrap-warning: #f0ad4e;
-    $color-bootstrap-danger: #c9302c;
-
-    $theme-bootstrap-colors: (
-        default : $color-bootstrap-default,
-        primary : $color-bootstrap-primary,
-        success : $color-bootstrap-success,
-        info    : $color-bootstrap-info,
-        warning : $color-bootstrap-warning,
-        danger  : $color-bootstrap-danger
-    );
-
-    /**
      * VMS
      */
     $color-vms-default: #01b6bf;
@@ -152,12 +105,6 @@ export default {
     .vue-switcher {
         position: relative;
         display: inline-block;
-
-        &__label {
-            display: block;
-            font-size: 10px;
-            margin-bottom: 5px;
-        }
 
         input {
             opacity: 0;
@@ -217,13 +164,14 @@ export default {
 
         &--bold {
             div {
-                top: -8px;
-                height: 26px;
-                width: 51px;
+                height: 24px;
+                width: 50px;
 
                 &:after {
-                    margin-left: -22px;
-                    top: 4px;
+                    height: 14px;
+                    width: 14px;
+                    margin-left: -20px;
+                    top: 5px;
                 }
             }
             &--unchecked {
@@ -266,87 +214,6 @@ export default {
 
                             &:after {
                                 background-color: lighten($color, 10%);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        &-theme--bulma {
-            @each $colorName, $color in $theme-bulma-colors {
-                &.vue-switcher-color--#{$colorName} {
-
-                    div {
-                        @if $colorName == 'default' {
-                            background-color: darken($color, 10%);
-                        } @else {
-                            background-color: lighten($color, 10%);
-                        }
-
-                        &:after {
-                            background-color: $color;
-                        }
-                    }
-
-                    &.vue-switcher--unchecked {
-                        div {
-
-                            @if $colorName == 'default' or $colorName == 'yellow' {
-                                background-color: darken($color, 5%);
-                            } @else {
-                                background-color: lighten($color, 30%);
-                            }
-
-                            &:after {
-
-                                @if $colorName == 'default' {
-                                    background-color: $color;
-                                } @else {
-                                    background-color: lighten($color, 10%);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        &-theme--bootstrap {
-            @each $colorName, $color in $theme-bootstrap-colors {
-                &.vue-switcher-color--#{$colorName} {
-                    div {
-                        @if $colorName == 'default' {
-                            background-color: darken($color, 10%);
-                        } @else {
-                            background-color: lighten($color, 10%);
-                        }
-
-                        &:after {
-                            @if $colorName == 'default' {
-                                background-color: darken($color, 6%);
-                            } @else {
-                                background-color: $color;
-                            }
-                        }
-                    }
-
-                    &.vue-switcher--unchecked {
-                        div {
-
-                            @if $colorName == 'default' {
-                                background-color: darken($color, 4%);
-                            } @else {
-                                background-color: lighten($color, 30%);
-                            }
-
-                            &:after {
-
-                                @if $colorName == 'default' {
-                                    background-color: darken($color, 6%);
-                                } @else {
-                                    background-color: lighten($color, 10%);
-                                }
                             }
                         }
                     }
