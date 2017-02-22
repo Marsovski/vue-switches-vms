@@ -4,7 +4,7 @@
 
 
 ```bash
-    npm install vue-switches --save
+    npm install vue-switches-vms --save
 ```
 
 ## Basic Usage
@@ -40,10 +40,3 @@ new Vue({
 `theme` - Which theme to use. <br />
 `color` - Which color to use. <br />
 `type-bold` - Bigger style. <br />
-
-
-```html
-
- <switches v-model="enabled" :selected="enabled"></switches>
-
-```
