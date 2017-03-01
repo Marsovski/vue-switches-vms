@@ -1,4 +1,5 @@
 # Vue Switches VMS
+Original [drewjbartlett](https://github.com/drewjbartlett/vue-switches)
 
 <img src="http://i1123.photobucket.com/albums/l554/DoctorOz_Oz/swi.png" />
 
