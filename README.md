@@ -33,6 +33,12 @@ new Vue({
 
 ```
 
+```html
+
+<switches v-model="enabled" :callBack="nameFunction(enabled)" :selected="enabled"></switches>
+
+```
+
 ## Props
 
 `label` - A static label to always display whether on or off. <br />

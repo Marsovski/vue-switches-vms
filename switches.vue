@@ -13,7 +13,9 @@ export default {
 		typeBold: {
 			default: true
 		},
+		callBack: Function,
 		selected: false,
+
 		disabled: false,
 
 		textEnabled: {
@@ -46,6 +48,7 @@ export default {
 	watch: {
 		enabled(val) {
 			this.$emit('input', val);
+			this.$emit('callBack');
 		},
 
 		selected(val) {
@@ -128,7 +131,7 @@ export default {
                 justify-content: flex-end;
 
                 &:after {
-					left: 15px;
+                    left: 15px;
                 }
             }
         }
